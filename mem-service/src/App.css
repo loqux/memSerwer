@@ -1,12 +1,16 @@
 .App {
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.mem-card {
+  width: 120px;
+  height: 1100px;
 }
 
+.mem-img {
+  height: auto;
+
+  width: auto;
+}
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
