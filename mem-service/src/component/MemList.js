@@ -1,7 +1,11 @@
 import React from "react";
 import Mem from "./Mem";
-import Grid from "@material-ui/core/Grid";
 import Paper from "@material-ui/core/Paper";
+import { withStyles } from "@material-ui/core/styles";
+
+const styles = (theme) => ({
+  Paper: { padding: 20, marginTop: 10, marginBottom: 10 },
+});
 
 class MemList extends React.Component {
   state = {
@@ -15,8 +19,7 @@ class MemList extends React.Component {
 
   render() {
     return (
-      <Paper style={this.props.styles.Paper}>
-        {console.log(this.mems)}
+      <Paper>
         <h1>Wszystkieee memy ! Tutaj :D</h1>
         {this.state.mems.map((mem) => (
           <Mem key={mem.id} mem={mem} />
@@ -25,4 +28,4 @@ class MemList extends React.Component {
     );
   }
 }
-export default MemList;
+export default withStyles(styles)(MemList);

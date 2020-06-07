@@ -45,9 +45,6 @@ const styles = (theme) => ({
     backgroundColor: theme.palette.background.default,
     padding: theme.spacing(3),
   },
-  nested: {
-    paddingLeft: theme.spacing(4),
-  },
 });
 
 class Layout extends Component {

@@ -1,51 +1,68 @@
 import React from "react";
 import {
   Card,
-  CardHeader,
-  CardMedia,
   CardContent,
   Typography,
   CardActions,
   Button,
-  Grid
+  Grid,
 } from "@material-ui/core";
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from "@material-ui/core/styles";
+import ArrowUpwardRoundedIcon from "@material-ui/icons/ArrowUpwardRounded";
+import ArrowDownwardRoundedIcon from "@material-ui/icons/ArrowDownwardRounded";
 
 const useStyles = makeStyles((theme) => ({
   memCard: {
-    height: 1000,
-    'margin-left': '10%',
-    width: "80%",
-  }
-})
-);
+    "margin-left": "20%",
+    "margin-top": "5%",
+    "margin-bottom": "5%",
+    width: "60%",
+  },
+  memTitle: {
+    margin: "5%",
+  },
+}));
 
-const Mem = ({mem}) => {
+const Mem = ({ mem }) => {
   const classes = useStyles();
   return (
     <div>
-     
       <Card className={classes.memCard}>
-      <CardHeader title=  {mem.title}/>
-        <CardMedia
-        
-          style={{
-            height: 0,
-            paddingTop: '56.25%',
-          }}
-          image={mem.img}
-          title={mem.title}
-          className="mem-img"
-        />
-        <CardActions>
-          <Button size="small" color="primary">
-            Upvote
-          </Button>
-          <p>{mem.upvotes}</p>
-          <Button size="small" color="primary">
-            Unvote
-          </Button>
-          <p>{mem.downvotes}</p>
+        <CardContent className={classes.memTitle}>
+          <Typography variant="h5">{mem.title}</Typography>
+          <img
+            src={mem.img}
+            alt={mem.title}
+            style={{ width: "70%", marginTop: "5%" }}
+          />
+        </CardContent>
+        <CardActions className={classes.memAction}>
+          <Grid container>
+            <Grid item sm>
+              <Button
+                variant="contained"
+                color="primary"
+                startIcon={<ArrowUpwardRoundedIcon />}
+                style={{
+                  width: "80%",
+                }}
+              >
+                {mem.upvotes}
+              </Button>
+            </Grid>
+            <Grid item sm>
+              <Button
+                variant="contained"
+                color="primary"
+                startIcon={<ArrowDownwardRoundedIcon />}
+                style={{
+                  width: "80%",
+                }}
+              >
+                {mem.downvotes}
+              </Button>
+            </Grid>{" "}
+          </Grid>
         </CardActions>
       </Card>
     </div>
