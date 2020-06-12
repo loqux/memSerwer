@@ -16,6 +16,7 @@ export function addMemSuccess(mem) {
 }
 
 export function memsFetchedSuccess(mems) {
+  console.log(mems);
   return {
     type: action.FETCH_MEMS_SUCCESS,
     mems,
@@ -50,10 +51,11 @@ export function updateMem(mem) {
 
 export function addMem(mem) {
   return function (dispatch) {
+    console.log(mem);
     return memsApi
-      .addMem(mem)
-      .then((changeMem) => {
-        dispatch(addMemSuccess(changeMem));
+      .postMem(mem)
+      .then((addedMem) => {
+        dispatch(addMemSuccess(addedMem));
       })
       .catch((error) => {
         throw error;

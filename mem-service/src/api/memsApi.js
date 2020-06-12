@@ -4,9 +4,11 @@ export function getMems() {
   return fetch(url).then(handleResponse).catch(handleError);
 }
 
-export function addMem(mem) {
+export function postMem(mem) {
+  console.log(mem);
+  console.log("Tutaj robie posta");
   return fetch(url, {
-    method: "POST", // POST for create, PUT to update when id already exists.
+    method: "POST",
     headers: { "content-type": "application/json" },
     body: JSON.stringify(mem),
   })

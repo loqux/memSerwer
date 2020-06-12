@@ -7,30 +7,16 @@ import {
   FormHelperText,
   Button,
 } from "@material-ui/core";
+import { NavLink } from "react-router-dom";
 
-
-
-const MemForm = ({ mems, onSave}) => {
-let newMem = {
-    id: mems.length + 1,
-    title: "",
-    img: "",
-    upvote: 0,
-    downvote: 0,
-  }
-
+const MemForm = ({ mem, onChange, onSave }) => {
   return (
-    <form onSubmit={onSave(newMem)}>
+    <form onSubmit={onSave}>
       <Typography variant="h3" style={{ margin: 10 }}>
         Dodaj swojego mema
       </Typography>
-      <Input
-        placeholder="Podaj nazwę mema:"
-        inputProps={{ "aria-label": "description" }}
-        onChange={(evt) => newMem.title = evt.target.value}
-        name="title"
-        label="Title"
-      />
+      <Input name="title" label="Title" value={mem.title} onChange={onChange} />
+
       {/* <Input
         accept="image/*"
         //   className={classes.input}
@@ -48,9 +34,9 @@ let newMem = {
           Upload
         </Button>
       </label> */}
-      <Button type="submit" className="btn btn-primary">
-        Save
-      </Button>
+      {/* <NavLink to="/regular"> */}
+      <button type="submit">Save</button>
+      {/* </NavLink> */}
     </form>
   );
 };

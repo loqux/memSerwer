@@ -11,7 +11,7 @@ const mems = (state = [], action) => {
     case UPDATE_MEM:
       return state.map((mem) => (mem.id === action.mem.id ? action.mem : mem));
     case ADD_MEM:
-      return [...state, action.mem];
+      return [...state, { ...action.mem }];
     default:
       return state;
   }

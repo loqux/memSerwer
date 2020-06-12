@@ -35,6 +35,34 @@
       "upvotes": 12,
       "downvotes": -6,
       "img": "/asset/siechnice.jpg"
+    },
+    {
+      "id": 6,
+      "title": "Halko",
+      "upvotes": 0,
+      "downvotes": 0,
+      "img": "/asset/kubus.jpg"
+    },
+    {
+      "id": 7,
+      "title": "ola",
+      "upvotes": 0,
+      "downvotes": 0,
+      "img": "/asset/kubus.jpg"
+    },
+    {
+      "id": 8,
+      "title": "grgrt",
+      "upvotes": 0,
+      "downvotes": 0,
+      "img": "/asset/kubus.jpg"
+    },
+    {
+      "id": 9,
+      "title": "mkhi",
+      "upvotes": 0,
+      "downvotes": 0,
+      "img": "/asset/kubus.jpg"
     }
   ]
 }

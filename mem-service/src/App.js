@@ -9,9 +9,9 @@ import {
   Redirect,
 } from "react-router-dom";
 import Paper from "@material-ui/core/Paper";
-import { memsFetched, updateMem, addMem } from "./redux/actions/actions";
+import { memsFetched, updateMem } from "./redux/actions/actions";
 import { connect } from "react-redux";
-import MemForm from "./component/MemForm";
+import AddMem from "./component/AddMem";
 
 const styles = (theme) => ({
   Paper: { padding: 20, marginBottom: 10 },
@@ -42,7 +42,18 @@ class App extends React.Component {
           <Leyout>
             <Switch>
               <Route exact path="/">
-                <Redirect to="/regular" />
+                <Paper
+                  styles={{ padding: 20, marginTop: 10, marginBottom: 10 }}
+                >
+                  {this.props.mems.map((mem) => (
+                    <Mem
+                      key={mem.id}
+                      mem={mem}
+                      onUpvoteClick={this.handleUpvoteMem}
+                      onDownvoteClick={this.handleDownvoteMem}
+                    />
+                  ))}
+                </Paper>
               </Route>
               <Route path="/regular">
                 <Paper
@@ -74,6 +85,11 @@ class App extends React.Component {
                     ))}
                 </Paper>
               </Route>
+              <Route exact path="/addMem">
+                <Paper>
+                  <AddMem />
+                </Paper>
+              </Route>
               <Route path="*">
                 <Paper>
                   {this.props.mems.map((mem) => (
@@ -92,8 +108,9 @@ class App extends React.Component {
 const mapStateToProps = (state) => {
   return {
     mems: state.mems,
+    newMem: state.newMem,
   };
 };
-const mapDispatchToProps = { memsFetched, updateMem, addMem };
+const mapDispatchToProps = { memsFetched, updateMem };
 
 export const AppContainer = connect(mapStateToProps, mapDispatchToProps)(App);
