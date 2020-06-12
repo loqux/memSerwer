@@ -23,8 +23,9 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Mem = ({ mem }) => {
+const Mem = ({ mem, onUpvoteClick, onDownvoteClick }) => {
   const classes = useStyles();
+
   return (
     <div>
       <Card className={classes.memCard}>
@@ -40,12 +41,14 @@ const Mem = ({ mem }) => {
           <Grid container>
             <Grid item sm>
               <Button
+                name="upvote"
                 variant="contained"
                 color="primary"
                 startIcon={<ArrowUpwardRoundedIcon />}
                 style={{
                   width: "80%",
                 }}
+                onClick={() => onUpvoteClick(mem)}
               >
                 {mem.upvotes}
               </Button>
@@ -58,10 +61,11 @@ const Mem = ({ mem }) => {
                 style={{
                   width: "80%",
                 }}
+                onClick={() => onDownvoteClick(mem)}
               >
                 {mem.downvotes}
               </Button>
-            </Grid>{" "}
+            </Grid>
           </Grid>
         </CardActions>
       </Card>

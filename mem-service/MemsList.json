@@ -1,37 +1,40 @@
-{ "mems":[
-  {
-    "id": 1,
-    "title": "Panicz kot",
-    "upvotes": 6,
-    "downvotes": 0,
-    "img": "/asset/kot.jpg"
-  },
-  {
-    "id": 2,
-    "title": "30 dni do wakacji",
-    "upvotes": 8,
-    "downvotes": -1,
-    "img": "/asset/dieta.jpg"
-  },
-  {
-    "id": 3,
-    "title": "Kubuś na HO",
-    "upvotes": 16,
-    "downvotes": 0,
-    "img": "/asset/kubus.jpg"
-  },
-  {
-    "id": 4,
-    "title": "Milość",
-    "upvotes": 1,
-    "downvotes": -3,
-    "img": "/asset/programisci.jpg"
-  },
-  {
-    "id": 5,
-    "title": "Brak Ci słońca?",
-    "upvotes": 1,
-    "downvotes": -3,
-    "img": "/asset/siechnice.jpg"
-  }
-]}
+{
+  "mems": [
+    {
+      "id": 1,
+      "title": "Panicz kot",
+      "upvotes": 6,
+      "downvotes": -1,
+      "img": "/asset/kot.jpg"
+    },
+    {
+      "id": 2,
+      "title": "30 dni do wakacji",
+      "upvotes": 9,
+      "downvotes": -4,
+      "img": "/asset/dieta.jpg"
+    },
+    {
+      "id": 3,
+      "title": "Kubuś na HO",
+      "upvotes": 16,
+      "downvotes": 0,
+      "img": "/asset/kubus.jpg"
+    },
+    {
+      "id": 4,
+      "title": "Milość",
+      "upvotes": 9,
+      "downvotes": -3,
+      "img": "/asset/programisci.jpg",
+      "upvote": null
+    },
+    {
+      "id": 5,
+      "title": "Brak Ci słońca?",
+      "upvotes": 12,
+      "downvotes": -6,
+      "img": "/asset/siechnice.jpg"
+    }
+  ]
+}

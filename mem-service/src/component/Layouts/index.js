@@ -10,6 +10,7 @@ import {
   CssBaseline,
   MenuList,
   MenuItem,
+  Button,
 } from "@material-ui/core";
 import { withStyles } from "@material-ui/core/styles";
 import { compose } from "recompose";
@@ -70,7 +71,11 @@ class Layout extends Component {
           <div className={classes.toolbar} />
         </Hidden>
         <MenuList>
-          <MenuItem component={Link} to="/" selected={"/" === pathname}>
+          <MenuItem
+            component={Link}
+            to="/regular"
+            selected={"/regular" === pathname}
+          >
             Wszytskie memy
           </MenuItem>
           <MenuItem component={Link} to="/hot" selected={"/hot" === pathname}>
@@ -96,6 +101,14 @@ class Layout extends Component {
               <Typography variant="h6" color="inherit" noWrap>
                 Przaśne memy
               </Typography>
+              <Button
+                color="inherit"
+                component={Link}
+                to="/addMem"
+                style={{ marginLeft: "70%" }}
+              >
+                Dodaj mema
+              </Button>
             </Toolbar>
           </AppBar>
           <Hidden mdUp>
