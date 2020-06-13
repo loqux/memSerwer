@@ -2,16 +2,12 @@ import React, { useState } from "react";
 import "./App.css";
 import Mem from "./component/Mem";
 import Leyout from "./component/Layouts/index";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Redirect,
-} from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Paper from "@material-ui/core/Paper";
 import { memsFetched, updateMem } from "./redux/actions/actions";
 import { connect } from "react-redux";
 import AddMem from "./component/AddMem";
+import Page404 from "./component/Layouts/Page404";
 
 const styles = (theme) => ({
   Paper: { padding: 20, marginBottom: 10 },
@@ -39,9 +35,9 @@ class App extends React.Component {
     return (
       <div className="App">
         <Router>
-          <Leyout>
-            <Switch>
-              <Route exact path="/">
+          <Switch>
+            <Route exact path="/">
+              <Leyout>
                 <Paper
                   styles={{ padding: 20, marginTop: 10, marginBottom: 10 }}
                 >
@@ -54,8 +50,10 @@ class App extends React.Component {
                     />
                   ))}
                 </Paper>
-              </Route>
-              <Route path="/regular">
+              </Leyout>
+            </Route>
+            <Route path="/regular">
+              <Leyout>
                 <Paper
                   styles={{ padding: 20, marginTop: 10, marginBottom: 10 }}
                 >
@@ -70,8 +68,10 @@ class App extends React.Component {
                       />
                     ))}
                 </Paper>
-              </Route>
-              <Route path="/hot">
+              </Leyout>
+            </Route>
+            <Route path="/hot">
+              <Leyout>
                 <Paper styles={{ padding: 20, marginBottom: 10 }}>
                   {this.props.mems
                     .filter((mem) => mem.upvotes + mem.downvotes > 5)
@@ -84,21 +84,20 @@ class App extends React.Component {
                       />
                     ))}
                 </Paper>
-              </Route>
-              <Route exact path="/addMem">
+              </Leyout>
+            </Route>
+            <Route exact path="/addMem">
+              <Leyout>
                 <Paper>
                   <AddMem />
                 </Paper>
-              </Route>
-              <Route path="*">
-                <Paper>
-                  {this.props.mems.map((mem) => (
-                    <Mem key={mem.id} mem={mem} />
-                  ))}
-                </Paper>
-              </Route>
-            </Switch>
-          </Leyout>
+              </Leyout>
+            </Route>
+
+            <Route path="*">
+              <Page404 />
+            </Route>
+          </Switch>
         </Router>
       </div>
     );

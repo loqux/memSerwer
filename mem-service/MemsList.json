@@ -3,14 +3,14 @@
     {
       "id": 1,
       "title": "Panicz kot",
-      "upvotes": 6,
+      "upvotes": 7,
       "downvotes": -1,
       "img": "/asset/kot.jpg"
     },
     {
       "id": 2,
       "title": "30 dni do wakacji",
-      "upvotes": 9,
+      "upvotes": 10,
       "downvotes": -4,
       "img": "/asset/dieta.jpg"
     },
@@ -35,34 +35,6 @@
       "upvotes": 12,
       "downvotes": -6,
       "img": "/asset/siechnice.jpg"
-    },
-    {
-      "id": 6,
-      "title": "Halko",
-      "upvotes": 0,
-      "downvotes": 0,
-      "img": "/asset/kubus.jpg"
-    },
-    {
-      "id": 7,
-      "title": "ola",
-      "upvotes": 0,
-      "downvotes": 0,
-      "img": "/asset/kubus.jpg"
-    },
-    {
-      "id": 8,
-      "title": "grgrt",
-      "upvotes": 0,
-      "downvotes": 0,
-      "img": "/asset/kubus.jpg"
-    },
-    {
-      "id": 9,
-      "title": "mkhi",
-      "upvotes": 0,
-      "downvotes": 0,
-      "img": "/asset/kubus.jpg"
     }
   ]
 }
