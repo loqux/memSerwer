@@ -1,37 +1,32 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
-import { addMem} from "../redux/actions/actions";
+import { addMem } from "../redux/actions/actions";
 import MemForm from "./MemForm";
 import { newMem } from "../api/newMem";
 import { withRouter } from "react-router-dom";
 import { bindActionCreators } from "redux";
 
-export function AddMem({  addMem, ...props }) {
-  const [mem, setMem] = useState({ ...props.mem });
+const AddMem = (props) => {
+  const [mem, setMem] = useState(newMem);
 
   function handleInputValue(event) {
     const { name, value } = event.target;
-    setMem((handleMem) => ({
-      ...handleMem,
+    setMem((addedMem) => ({
+      ...addedMem,
       [name]: value,
     }));
   }
 
   function handleSaveMem(event) {
     event.preventDefault();
-    addMem(mem);
+    props.addMem(mem);
     props.history.push("/regular");
   }
 
-  return <MemForm mem={mem} onChange={handleInputValue} onSave={handleSaveMem}/>;
-}
-
-function mapStateToProps() {
-  const mem = newMem;
-  return {
-    mem,
-  };
-}
+  return (
+    <MemForm mem={mem} onChange={handleInputValue} onSave={handleSaveMem} />
+  );
+};
 
 const mapDispatchToProps = (dispatch) =>
   bindActionCreators(
@@ -41,5 +36,4 @@ const mapDispatchToProps = (dispatch) =>
     dispatch
   );
 
-
-export default connect(mapStateToProps, mapDispatchToProps)(withRouter(AddMem));
+export default connect(null, mapDispatchToProps)(withRouter(AddMem));

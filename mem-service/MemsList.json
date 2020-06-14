@@ -3,51 +3,58 @@
     {
       "id": 1,
       "title": "Panicz kot",
-      "upvotes": 7,
+      "upvotes": 3,
       "downvotes": -1,
-      "img": "/asset/kot.jpg"
+      "img": "/asset/kot.jpg",
+      "star": false
     },
     {
       "id": 2,
       "title": "30 dni do wakacji",
       "upvotes": 10,
       "downvotes": -4,
-      "img": "/asset/dieta.jpg"
+      "img": "/asset/dieta.jpg",
+      "star": false
     },
     {
       "id": 3,
       "title": "Kubuś na HO",
-      "upvotes": 16,
-      "downvotes": 0,
-      "img": "/asset/kubus.jpg"
+      "upvotes": 6,
+      "downvotes": 1,
+      "img": "/asset/kubus.jpg",
+      "star": false
     },
     {
       "id": 4,
       "title": "Milość",
       "upvotes": 9,
       "downvotes": -3,
-      "img": "/asset/programisci.jpg"
+      "img": "/asset/programisci.jpg",
+      "star": false
     },
     {
       "id": 5,
       "title": "Brak Ci słońca?",
       "upvotes": 12,
       "downvotes": -6,
-      "img": "/asset/siechnice.jpg"
+      "img": "/asset/siechnice.jpg",
+      "star": false
     },
     {
       "id": 6,
       "title": "Kiedy spędziłeś nad hooks'em 3 godziny, a prowadzący wyjąsnił go w 15 min!",
       "upvotes": 0,
       "downvotes": 0,
-      "img": "/asset/bezkomentarza.jpg"
+      "img": "/asset/bezkomentarza.jpg",
+      "star": false
     },
     {
       "id": 7,
-      "title": "Ktos",
+      "title": "Wnuczku a ja w Twoim wieku",
       "upvotes": 0,
       "downvotes": 0,
-      "img": "/asset/bezkomentarza.jpg"
+      "img": "/asset/bezkomentarza.jpg",
+      "star": false
     }
   ]
 }

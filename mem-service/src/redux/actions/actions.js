@@ -50,10 +50,7 @@ export function updateMem(mem) {
 }
 
 export function addMem(mem) {
-  console.log("Add mem", mem);
-
   return function (dispatch) {
-    console.log("Add mem after dispatch",mem);
     return memsApi
       .postMem(mem)
       .then((addedMem) => {

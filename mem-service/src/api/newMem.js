@@ -4,4 +4,5 @@ export const newMem = {
   upvotes: 0,
   downvotes: 0,
   img: "/asset/bezkomentarza.jpg",
+  star: false,
 };
