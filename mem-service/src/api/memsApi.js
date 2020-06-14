@@ -5,8 +5,6 @@ export function getMems() {
 }
 
 export function postMem(mem) {
-  console.log(mem);
-  console.log("Tutaj robie posta");
   return fetch(url, {
     method: "POST",
     headers: { "content-type": "application/json" },

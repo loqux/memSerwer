@@ -26,8 +26,7 @@
       "title": "Milość",
       "upvotes": 9,
       "downvotes": -3,
-      "img": "/asset/programisci.jpg",
-      "upvote": null
+      "img": "/asset/programisci.jpg"
     },
     {
       "id": 5,
@@ -35,6 +34,20 @@
       "upvotes": 12,
       "downvotes": -6,
       "img": "/asset/siechnice.jpg"
+    },
+    {
+      "id": 6,
+      "title": "Kiedy spędziłeś nad hooks'em 3 godziny, a prowadzący wyjąsnił go w 15 min!",
+      "upvotes": 0,
+      "downvotes": 0,
+      "img": "/asset/bezkomentarza.jpg"
+    },
+    {
+      "id": 7,
+      "title": "Ktos",
+      "upvotes": 0,
+      "downvotes": 0,
+      "img": "/asset/bezkomentarza.jpg"
     }
   ]
 }

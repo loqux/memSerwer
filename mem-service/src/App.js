@@ -107,7 +107,6 @@ class App extends React.Component {
 const mapStateToProps = (state) => {
   return {
     mems: state.mems,
-    newMem: state.newMem,
   };
 };
 const mapDispatchToProps = { memsFetched, updateMem };
