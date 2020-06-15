@@ -3,8 +3,8 @@
     {
       "id": 1,
       "title": "Panicz kot",
-      "upvotes": 3,
-      "downvotes": -1,
+      "upvotes": 28,
+      "downvotes": -13,
       "img": "/asset/kot.jpg",
       "star": false
     },
@@ -27,7 +27,7 @@
     {
       "id": 4,
       "title": "Milość",
-      "upvotes": 9,
+      "upvotes": 10,
       "downvotes": -3,
       "img": "/asset/programisci.jpg",
       "star": false
@@ -43,15 +43,15 @@
     {
       "id": 6,
       "title": "Kiedy spędziłeś nad hooks'em 3 godziny, a prowadzący wyjąsnił go w 15 min!",
-      "upvotes": 0,
-      "downvotes": 0,
+      "upvotes": 6,
+      "downvotes": -1,
       "img": "/asset/bezkomentarza.jpg",
       "star": false
     },
     {
       "id": 7,
-      "title": "Wnuczku a ja w Twoim wieku",
-      "upvotes": 0,
+      "title": "O jaaa",
+      "upvotes": 7,
       "downvotes": 0,
       "img": "/asset/bezkomentarza.jpg",
       "star": false

@@ -4,22 +4,21 @@ import * as memsApi from "../../api/memsApi";
 export function updateMemSuccess(mem) {
   return {
     type: action.UPDATE_MEM,
-    mem,
+    payload: mem,
   };
 }
 
 export function addMemSuccess(mem) {
   return {
     type: action.ADD_MEM,
-    mem,
+    payload: mem,
   };
 }
 
 export function memsFetchedSuccess(mems) {
-  console.log(mems);
   return {
     type: action.FETCH_MEMS_SUCCESS,
-    mems,
+    payload: mems,
   };
 }
 

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
-import { addMem } from "../redux/actions/actions";
+import { addMem } from "../redux/actions/memActions";
 import MemForm from "./MemForm";
 import { newMem } from "../api/newMem";
 import { withRouter } from "react-router-dom";

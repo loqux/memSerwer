@@ -1,15 +1,15 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
-import { AppContainer } from "./App";
+import App from "./App";
 import { Provider } from "react-redux";
-import { memStore } from "./redux/store/MemStore";
+import memStore from "./redux/store";
 
 ReactDOM.render(
-  <Provider store={memStore}>
-    <React.StrictMode>
-      <AppContainer />
-    </React.StrictMode>
-  </Provider>,
+  <React.StrictMode>
+    <Provider store={memStore()}>
+      <App />
+    </Provider>
+  </React.StrictMode>,
   document.getElementById("root")
 );
