@@ -75,10 +75,11 @@ class Layout extends Component {
             component={Link}
             to="/regular"
             selected={"/regular" === pathname}
+            filter="regular"
           >
             Wszytskie memy
           </MenuItem>
-          <MenuItem component={Link} to="/hot" selected={"/hot" === pathname}>
+          <MenuItem component={Link} to="/hot" selected={"/hot" === pathname} filter="hot">
             Gorące memy
           </MenuItem>
         </MenuList>
