@@ -4,7 +4,9 @@ import { withRouter } from "react-router-dom";
 import { memsFetched, updateMem } from "../redux/actions/memActions";
 import { bindActionCreators } from "redux";
 import { useLocation } from "react-router-dom";
-import MemsPage from "./MemsPage";
+import Mem from "./Mem";
+import Leyout from "./Layouts/index";
+import Paper from "@material-ui/core/Paper";
 
 const MemsList = (props) => {
   const [isUpdated, setUpdated] = useState();
@@ -27,21 +29,44 @@ const MemsList = (props) => {
     await props.updateMem(newMem);
   };
 
+  const handleFavorite = async (mem) => {
+    let newMem = { ...mem };
+    newMem.star = mem.star ? false : true;
+    setUpdated(newMem);
+    await props.updateMem(newMem);
+  };
+
   if (useLocation().pathname === "/hot") {
     return (
-      <MemsPage
-        mems={props.mems.hots}
-        handleUpvoteMem={handleUpvoteMem}
-        handleDownvoteMem={handleDownvoteMem}
-      />
+      <Leyout>
+        <Paper styles={{ padding: 20, marginTop: 10, marginBottom: 10 }}>
+          {props.mems.hots.map((mem) => (
+            <Mem
+              key={mem.id}
+              mem={mem}
+              onUpvoteClick={handleUpvoteMem}
+              onDownvoteClick={handleDownvoteMem}
+              onMarkStar={handleFavorite}
+            />
+          ))}
+        </Paper>
+      </Leyout>
     );
   }
   return (
-    <MemsPage
-      mems={props.mems.regulars}
-      handleUpvoteMem={handleUpvoteMem}
-      handleDownvoteMem={handleDownvoteMem}
-    />
+    <Leyout>
+      <Paper styles={{ padding: 20, marginTop: 10, marginBottom: 10 }}>
+        {props.mems.regulars.map((mem) => (
+          <Mem
+            key={mem.id}
+            mem={mem}
+            onUpvoteClick={handleUpvoteMem}
+            onDownvoteClick={handleDownvoteMem}
+            onMarkStar={handleFavorite}
+          />
+        ))}
+      </Paper>
+    </Leyout>
   );
 };
 

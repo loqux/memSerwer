@@ -15,7 +15,8 @@ const mems = (state = INIT_STATE, action) => {
       return {
         ...state,
         hots: action.payload.filter((mem) => mem.upvotes + mem.downvotes > 5),
-        regulars: action.payload.filter((mem) => mem.upvotes + mem.downvotes < 6
+        regulars: action.payload.filter(
+          (mem) => mem.upvotes + mem.downvotes < 6
         ),
       };
     case UPDATE_MEM:

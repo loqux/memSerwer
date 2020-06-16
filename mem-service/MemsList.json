@@ -3,18 +3,18 @@
     {
       "id": 1,
       "title": "Panicz kot",
-      "upvotes": 6,
-      "downvotes": 2,
+      "upvotes": 10,
+      "downvotes": -4,
       "img": "/asset/kot.jpg",
-      "star": false
+      "star": true
     },
     {
       "id": 2,
       "title": "30 dni do wakacji",
-      "upvotes": 12,
+      "upvotes": 13,
       "downvotes": -7,
       "img": "/asset/dieta.jpg",
-      "star": false
+      "star": true
     },
     {
       "id": 3,
@@ -22,7 +22,7 @@
       "upvotes": 14,
       "downvotes": -1,
       "img": "/asset/kubus.jpg",
-      "star": false
+      "star": true
     },
     {
       "id": 4,
@@ -44,6 +44,78 @@
       "id": 6,
       "title": "Kiedy spędziłeś nad hooks'em 3 godziny, a prowadzący wyjąsnił go w 15 min!",
       "upvotes": 11,
+      "downvotes": 0,
+      "img": "/asset/bezkomentarza.jpg",
+      "star": true
+    },
+    {
+      "id": 7,
+      "title": "O panie",
+      "upvotes": 0,
+      "downvotes": 0,
+      "img": "/asset/bezkomentarza.jpg",
+      "star": false
+    },
+    {
+      "id": 8,
+      "title": "O panie2",
+      "upvotes": 0,
+      "downvotes": 0,
+      "img": "/asset/bezkomentarza.jpg",
+      "star": false
+    },
+    {
+      "id": 9,
+      "title": "dsfafds",
+      "upvotes": 0,
+      "downvotes": 0,
+      "img": "/asset/bezkomentarza.jpg",
+      "star": true
+    },
+    {
+      "id": 10,
+      "title": "sdas",
+      "upvotes": 0,
+      "downvotes": 0,
+      "img": "/asset/bezkomentarza.jpg",
+      "star": false
+    },
+    {
+      "id": 11,
+      "title": "dfdfefe",
+      "upvotes": 0,
+      "downvotes": 0,
+      "img": "/asset/bezkomentarza.jpg",
+      "star": false
+    },
+    {
+      "id": 12,
+      "title": "sdafdfad",
+      "upvotes": 0,
+      "downvotes": 0,
+      "img": "/asset/bezkomentarza.jpg",
+      "star": false
+    },
+    {
+      "id": 13,
+      "title": "jkghjuf",
+      "upvotes": 0,
+      "downvotes": 0,
+      "img": "/asset/bezkomentarza.jpg",
+      "star": false
+    },
+    {
+      "id": 14,
+      "title": "werw",
+      "upvotes": 0,
+      "downvotes": 0,
+      "img": "/asset/bezkomentarza.jpg",
+      "star": false
+    },
+    {
+      "id": 15,
+      "title": "adssafds",
+      "upvotes": 0,
       "downvotes": 0,
       "img": "/asset/bezkomentarza.jpg",
       "star": false
