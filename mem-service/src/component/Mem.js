@@ -6,10 +6,14 @@ import {
   CardActions,
   Button,
   Grid,
+  IconButton,
 } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
-import ArrowUpwardRoundedIcon from "@material-ui/icons/ArrowUpwardRounded";
-import ArrowDownwardRoundedIcon from "@material-ui/icons/ArrowDownwardRounded";
+import {
+  ArrowUpwardRounded,
+  ArrowDownwardRounded,
+  Star,
+} from "@material-ui/icons";
 
 const useStyles = makeStyles((theme) => ({
   memCard: {
@@ -40,11 +44,17 @@ const Mem = ({ mem, onUpvoteClick, onDownvoteClick }) => {
         <CardActions className={classes.memAction}>
           <Grid container>
             <Grid item sm>
+              <IconButton>
+                <Star />
+              </IconButton>
+            </Grid>
+
+            <Grid item sm>
               <Button
                 name="upvote"
                 variant="contained"
                 color="primary"
-                startIcon={<ArrowUpwardRoundedIcon />}
+                startIcon={<ArrowUpwardRounded />}
                 style={{
                   width: "80%",
                 }}
@@ -57,7 +67,7 @@ const Mem = ({ mem, onUpvoteClick, onDownvoteClick }) => {
               <Button
                 variant="contained"
                 color="primary"
-                startIcon={<ArrowDownwardRoundedIcon />}
+                startIcon={<ArrowDownwardRounded />}
                 style={{
                   width: "80%",
                 }}

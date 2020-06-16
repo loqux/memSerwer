@@ -1,21 +1,6 @@
 import * as action from "./actionsType";
 import * as memsApi from "../../api/memsApi";
 
-// export function filterHot(mems) {
-//   console.log("FILTER HOT ACCTION", mems);
-//   return {
-//     type: action.HOT,
-//     payload: mems,
-//   };
-// }
-
-// export function filterRegular(mems) {
-//   return {
-//     type: action.REGULAR,
-//     payload: mems,
-//   };
-// }
-
 export function updateMemSuccess(mem) {
   return {
     type: action.UPDATE_MEM,
@@ -38,8 +23,8 @@ export function memsFetchedSuccess(mems) {
 }
 
 export function memsFetched() {
-  return function (dispatch) {
-    return memsApi
+  return async function (dispatch) {
+    return await memsApi
       .getMems()
       .then((mems) => {
         dispatch(memsFetchedSuccess(mems));

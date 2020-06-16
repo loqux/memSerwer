@@ -12,20 +12,19 @@ const styles = (theme) => ({
 });
 
 class App extends React.Component {
-
   render() {
     return (
       <div className="App">
         <Router>
           <Switch>
             <Route exact path="/">
-              <MemsList/>
+              <MemsList />
             </Route>
             <Route exact path="/regular">
-              <MemsList/>
+              <MemsList />
             </Route>
             <Route exact path="/hot">
-              <MemsList/>
+              <MemsList />
             </Route>
             <Route exact path="/addMem">
               <Leyout>
