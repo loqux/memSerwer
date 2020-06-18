@@ -12,9 +12,9 @@ In the project directory, you need to run:
 
 ### `npm run start`
 
-Runs the app in the development mode with json server on port 3004<br />
+Runs the app in the development mode on port 3000 with json server on port 3004<br />
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+
 
