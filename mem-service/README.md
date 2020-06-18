@@ -3,11 +3,14 @@ Application has implemented functionality to vote on mem,
 add mem and mark as favorite.
 Application use react, route, redux and material-ui.
 
-## Available Scripts
+## Run application
 
-In the project directory, you can run:
+In the project directory, you need to run:
 
-### `npm start`
+### `npm install`
+
+
+### `npm run start`
 
 Runs the app in the development mode with json server on port 3004<br />
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
