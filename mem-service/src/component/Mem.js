@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import {
   Card,
   CardContent,
@@ -7,75 +7,81 @@ import {
   Button,
   Grid,
   IconButton,
+  Popover,
 } from "@material-ui/core";
-import { makeStyles } from "@material-ui/core/styles";
 import {
   ArrowUpwardRounded,
   ArrowDownwardRounded,
   Star,
 } from "@material-ui/icons";
-
-const useStyles = makeStyles((theme) => ({
-  memCard: {
-    "margin-left": "20%",
-    "margin-top": "5%",
-    "margin-bottom": "5%",
-    width: "60%",
-  },
-  memTitle: {
-    margin: "5%",
-  },
-}));
+import styles from "./Mem.module.css";
 
 const Mem = ({ mem, onUpvoteClick, onDownvoteClick, onMarkStar }) => {
-  const classes = useStyles();
-  //   const [favorite, setFavorite] = useState(false);
+  const [anchorEl, setAnchorEl] = React.useState(null);
 
-  //   const markAsFavorite=(mem) =>{
-  // onMarkStar(mem);
-  // setFavorite(true);
-  //   }
+  const handlePopoverOpen = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handlePopoverClose = () => {
+    setAnchorEl(null);
+  };
+
+  const open = Boolean(anchorEl);
+
   return (
-    <Card className={classes.memCard}>
-      <CardContent className={classes.memTitle}>
-        <Typography variant="h5">{mem.title}</Typography>
-        <img
-          src={mem.img}
-          alt={mem.title}
-          style={{ width: "70%", marginTop: "5%" }}
-        />
+    <Card className={styles.memCard}>
+      <CardContent>
+        <Typography variant="h4">{mem.title}</Typography>
+        <img className={styles.memImg} src={mem.img} alt={mem.title} />
       </CardContent>
-      <CardActions className={classes.memAction}>
-        <Grid container>
-          <Grid item sm>
+      <CardActions>
+        <Grid container align="center" justify="center" alignItems="center">
+          <Grid
+            item
+            sm={2}
+            onMouseEnter={handlePopoverOpen}
+            onMouseLeave={handlePopoverClose}
+          >
             <IconButton
               onClick={() => onMarkStar(mem)}
               color={mem.star ? "primary" : "default"}
             >
-              <Star />
+              <Star style={{ fontSize: 50 }} />
             </IconButton>
-          </Grid>
-          <Grid item sm>
-            <Button
-              name="upvote"
-              variant="contained"
-              style={{
-                width: "80%",
+            <Popover
+              id="mouse-over-popover"
+              open={open}
+              anchorEl={anchorEl}
+              anchorOrigin={{
+                vertical: "bottom",
+                horizontal: "left",
               }}
+              transformOrigin={{
+                vertical: "top",
+                horizontal: "left",
+              }}
+              onClose={handlePopoverClose}
+              disableRestoreFocus
+              style={{ pointerEvents: "none" }}
+            >
+              <Typography>Add to favorite</Typography>
+            </Popover>
+          </Grid>
+          <Grid item sm={5}>
+            <Button
+              variant="contained"
+              className={styles.voteButton}
               onClick={() => onUpvoteClick(mem)}
             >
               <ArrowUpwardRounded />
               {mem.upvotes}
             </Button>
           </Grid>
-          <Grid item sm>
+          <Grid item sm={5}>
             <Button
+              className={styles.voteButton}
               variant="contained"
-              color="primary"
-              startIcon={<ArrowDownwardRounded />}
-              style={{
-                width: "80%",
-              }}
               onClick={() => onDownvoteClick(mem)}
             >
               <ArrowDownwardRounded />

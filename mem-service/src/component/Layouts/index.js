@@ -1,50 +1,51 @@
 import React, { Component, Fragment } from "react";
 import { Link, withRouter } from "react-router-dom";
 import {
-  AppBar,
-  Toolbar,
   IconButton,
-  Typography,
   Hidden,
   Drawer,
   CssBaseline,
   MenuList,
   MenuItem,
-  Button,
 } from "@material-ui/core";
+import MenuIcon from "@material-ui/icons/Menu";
 import { withStyles } from "@material-ui/core/styles";
 import { compose } from "recompose";
 
-const drawerWidth = 240;
+const drawerWidthLarge = 240;
+const drawerWidthSmall = 80;
 
 const styles = (theme) => ({
   root: {
-    flexGrow: 1,
-    zIndex: 1,
-    overflow: "hidden",
-    position: "relative",
     display: "flex",
-    width: "100%",
   },
-  appBar: {
-    zIndex: theme.zIndex.drawer + 1,
-  },
-  navIconHide: {
-    [theme.breakpoints.up("md")]: {
-      display: "none",
+
+  drawer: {
+    [theme.breakpoints.up("sm")]: {
+      width: drawerWidthLarge,
+      flexShrink: 0,
+    },
+    [theme.breakpoints.down("xs")]: {
+      width: drawerWidthSmall,
+      flexShrink: 0,
     },
   },
-  toolbar: theme.mixins.toolbar,
+
   drawerPaper: {
-    width: drawerWidth,
-    [theme.breakpoints.up("md")]: {
-      position: "relative",
-    },
+    width: drawerWidthLarge,
   },
+
+  smalDrower: {
+    width: drawerWidthSmall,
+  },
+
   content: {
     flexGrow: 1,
-    backgroundColor: theme.palette.background.default,
     padding: theme.spacing(3),
+  },
+
+  menuLink: {
+    margin: theme.spacing(3),
   },
 });
 
@@ -63,90 +64,89 @@ class Layout extends Component {
       location: { pathname },
       children,
     } = this.props;
+
     const { mobileOpen } = this.state;
 
     const drawer = (
-      <div>
-        <Hidden smDown>
-          <div className={classes.toolbar} />
-        </Hidden>
+      <Fragment>
         <MenuList>
           <MenuItem
+            className={classes.menuLink}
             component={Link}
             to="/regular"
             selected={"/regular" === pathname}
-            filter="regular"
           >
-            Wszytskie memy
+            REGULAR
           </MenuItem>
           <MenuItem
+            className={classes.menuLink}
             component={Link}
             to="/hot"
             selected={"/hot" === pathname}
-            filter="hot"
           >
-            Gorące memy
+            HOT MEM
+          </MenuItem>
+          <MenuItem
+            className={classes.menuLink}
+            component={Link}
+            to="/addMem"
+            selected={"/addMem" === pathname}
+          >
+            ADD MEM
           </MenuItem>
         </MenuList>
-      </div>
+      </Fragment>
     );
 
     return (
       <Fragment>
         <CssBaseline />
-
         <div className={classes.root}>
-          <AppBar position="absolute" className={classes.appBar}>
-            <Toolbar>
-              <IconButton
-                color="inherit"
-                aria-label="open drawer"
-                onClick={this.handleDrawerToggle}
-                className={classes.navIconHide}
-              ></IconButton>
-              <Typography variant="h6" color="inherit" noWrap>
-                Przaśne memy
-              </Typography>
-              <Button
-                color="inherit"
-                component={Link}
-                to="/addMem"
-                style={{ marginLeft: "70%" }}
+          <nav className={classes.drawer} aria-label="mailbox folders">
+            <Hidden smUp>
+              <Drawer
+                variant="permanent"
+                classes={{
+                  paper: classes.smalDrower,
+                }}
               >
-                Dodaj mema
-              </Button>
-            </Toolbar>
-          </AppBar>
-          <Hidden mdUp>
-            <Drawer
-              variant="temporary"
-              open={mobileOpen}
-              onClose={this.handleDrawerToggle}
-              classes={{
-                paper: classes.drawerPaper,
-              }}
-              ModalProps={{
-                keepMounted: true, // Better open performance on mobile.
-              }}
-            >
-              {drawer}
-            </Drawer>
-          </Hidden>
-          <Hidden smDown implementation="css">
-            <Drawer
-              variant="permanent"
-              open
-              classes={{
-                paper: classes.drawerPaper,
-              }}
-            >
-              {drawer}
-            </Drawer>
-          </Hidden>
-          <main className={classes.content}>
-            <div className={classes.toolbar} />
-            {children}
-          </main>
+                <IconButton
+                  color="inherit"
+                  aria-label="open drawer"
+                  edge="start"
+                  onClick={this.handleDrawerToggle}
+                  className={classes.menuButton}
+                >
+                  <MenuIcon />
+                </IconButton>
+              </Drawer>
+              <Drawer
+                variant="temporary"
+                open={mobileOpen}
+                onClose={this.handleDrawerToggle}
+                classes={{
+                  paper: classes.drawerPaper,
+                }}
+                ModalProps={{
+                  keepMounted: true, // Better open performance on mobile.
+                }}
+              >
+                {drawer}
+              </Drawer>
+            </Hidden>
+            <Hidden xsDown implementation="css">
+              <Drawer
+                variant="permanent"
+                open
+                classes={{
+                  paper: classes.drawerPaper,
+                }}
+              >
+                {drawer}
+              </Drawer>
+            </Hidden>
+          </nav>
+          <main className={classes.content}>{children}</main>
         </div>
       </Fragment>
     );

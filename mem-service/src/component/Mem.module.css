@@ -1,0 +1,19 @@
+.voteButton {
+  width: 80%;
+  margin: auto;
+}
+
+.memImg {
+  width: 70%;
+  margin-top: 5%;
+}
+
+.memCard {
+  width: 70%;
+  margin: auto;
+  margin-bottom: 5%;
+}
+
+.addForm {
+  padding: 5%;
+}

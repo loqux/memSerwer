@@ -6,10 +6,8 @@ import { Provider } from "react-redux";
 import memStore from "./redux/store";
 
 ReactDOM.render(
-  <React.StrictMode>
-    <Provider store={memStore()}>
-      <App />
-    </Provider>
-  </React.StrictMode>,
+  <Provider store={memStore()}>
+    <App />
+  </Provider>,
   document.getElementById("root")
 );
